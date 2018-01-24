@@ -15,160 +15,286 @@ terminal-view {
     line-height: normal;
   }
 
-  &.themed .terminal {
-    background-color: @syntax-background-color;
+  // &.themed .terminal {
+  //   background-color: @syntax-background-color;
+  //   color: @syntax-text-color;
+  //
+  //   .xterm-viewport {
+  //     background-color: @syntax-background-color;
+  //   }
+  //
+  //   &.focus {
+  //     .terminal-cursor:not(.xterm-cursor-style-underline):not(.xterm-cursor-style-bar) {
+  //       background-color: @syntax-text-color;
+  //     }
+  //   }
+  //
+  //   &:not(.focus) .terminal-cursor {
+  //     outline: 1px solid @syntax-text-color;
+  //     outline-offset: -1px;
+  //     background-color: transparent;
+  //   }
+  //
+  //   .xterm-color-0 {
+  //     color: #2e3436;
+  //   }
+  //
+  //   .xterm-bg-color-0 {
+  //     background-color: #2e3436;
+  //   }
+  //
+  //   .xterm-color-1 {
+  //     color: @syntax-color-variable; // Red
+  //   }
+  //
+  //   .xterm-bg-color-1 {
+  //     background-color: @syntax-color-variable; // Red
+  //   }
+  //
+  //   .xterm-color-2 {
+  //     color: @syntax-color-snippet; // Green
+  //   }
+  //
+  //   .xterm-bg-color-2 {
+  //     background-color: @syntax-color-snippet; // Green
+  //   }
+  //
+  //   .xterm-color-3 {
+  //     color: @syntax-color-constant; // Yellow (Orange)
+  //   }
+  //
+  //   .xterm-bg-color-3 {
+  //     background-color: @syntax-color-constant; // Yellow (Orange)
+  //   }
+  //
+  //   .xterm-color-4 {
+  //     color: @syntax-color-function; // Blue
+  //   }
+  //
+  //   .xterm-bg-color-4 {
+  //     background-color: @syntax-color-function; // Blue
+  //   }
+  //
+  //   .xterm-color-5 {
+  //     color: @syntax-color-keyword; // Purple
+  //   }
+  //
+  //   .xterm-bg-color-5 {
+  //     background-color: @syntax-color-keyword; // Purple
+  //   }
+  //
+  //   .xterm-color-6 {
+  //     color: @syntax-color-class; // Cyan
+  //   }
+  //
+  //   .xterm-bg-color-6 {
+  //     background-color: @syntax-color-class; // Cyan
+  //   }
+  //
+  //   .xterm-color-7 {
+  //     color: #d3d7cf;
+  //   }
+  //
+  //   .xterm-bg-color-7 {
+  //     background-color: #d3d7cf;
+  //   }
+  //
+  //   .xterm-color-8 {
+  //     color: #555753;
+  //   }
+  //
+  //   .xterm-bg-color-8 {
+  //     background-color: #555753;
+  //   }
+  //
+  //   .xterm-color-9 {
+  //     color: @syntax-color-variable; // Red
+  //   }
+  //
+  //   .xterm-bg-color-9 {
+  //     background-color: @syntax-color-variable; // Red
+  //   }
+  //
+  //   .xterm-color-10 {
+  //     color: @syntax-color-snippet; // Green
+  //   }
+  //
+  //   .xterm-bg-color-10 {
+  //     background-color: @syntax-color-snippet; // Green
+  //   }
+  //
+  //   .xterm-color-11 {
+  //     color: @syntax-color-constant; // Yellow (Orange)
+  //   }
+  //
+  //   .xterm-bg-color-11 {
+  //     background-color: @syntax-color-constant; // Yellow (Orange)
+  //   }
+  //
+  //   .xterm-color-12 {
+  //     color: @syntax-color-function; // Blue
+  //   }
+  //
+  //   .xterm-bg-color-12 {
+  //     background-color: @syntax-color-function; // Blue
+  //   }
+  //
+  //   .xterm-color-13 {
+  //     color: @syntax-color-keyword; // Purple
+  //   }
+  //
+  //   .xterm-bg-color-13 {
+  //     background-color: @syntax-color-keyword; // Purple
+  //   }
+  //
+  //   .xterm-color-14 {
+  //     color: @syntax-color-class; // Cyan
+  //   }
+  //
+  //   .xterm-bg-color-14 {
+  //     background-color: @syntax-color-class; // Cyan
+  //   }
+  //
+  //   .xterm-color-15 {
+  //     color: #eeeeec;
+  //   }
+  //
+  //   .xterm-bg-color-15 {
+  //     background-color: #eeeeec;
+  //   }
+  //
+  //   .xterm-color-16 {
+  //     color: #000000;
+  //   }
+  //
+  //   .xterm-bg-color-16 {
+  //     background-color: #000000;
+  //   }
+  // }
+}
+
+// https://github.com/xtermjs/xterm.js/blob/490e46ce0c396d0129db85467e8d097c3a74a3f9/typings/xterm.d.ts#L95
+
+.terminal-view-color-elements {
+
+  [data-color-key="foreground"] {
     color: @syntax-text-color;
-
-    .xterm-viewport {
-      background-color: @syntax-background-color;
-    }
-
-    &.focus {
-      .terminal-cursor:not(.xterm-cursor-style-underline):not(.xterm-cursor-style-bar) {
-        background-color: @syntax-text-color;
-      }
-    }
-
-    &:not(.focus) .terminal-cursor {
-      outline: 1px solid @syntax-text-color;
-      outline-offset: -1px;
-      background-color: transparent;
-    }
-
-    .xterm-color-0 {
-      color: #2e3436;
-    }
-
-    .xterm-bg-color-0 {
-      background-color: #2e3436;
-    }
-
-    .xterm-color-1 {
-      color: @syntax-color-variable; // Red
-    }
-
-    .xterm-bg-color-1 {
-      background-color: @syntax-color-variable; // Red
-    }
-
-    .xterm-color-2 {
-      color: @syntax-color-snippet; // Green
-    }
-
-    .xterm-bg-color-2 {
-      background-color: @syntax-color-snippet; // Green
-    }
-
-    .xterm-color-3 {
-      color: @syntax-color-constant; // Yellow (Orange)
-    }
-
-    .xterm-bg-color-3 {
-      background-color: @syntax-color-constant; // Yellow (Orange)
-    }
-
-    .xterm-color-4 {
-      color: @syntax-color-function; // Blue
-    }
-
-    .xterm-bg-color-4 {
-      background-color: @syntax-color-function; // Blue
-    }
-
-    .xterm-color-5 {
-      color: @syntax-color-keyword; // Purple
-    }
-
-    .xterm-bg-color-5 {
-      background-color: @syntax-color-keyword; // Purple
-    }
-
-    .xterm-color-6 {
-      color: @syntax-color-class; // Cyan
-    }
-
-    .xterm-bg-color-6 {
-      background-color: @syntax-color-class; // Cyan
-    }
-
-    .xterm-color-7 {
-      color: #d3d7cf;
-    }
-
-    .xterm-bg-color-7 {
-      background-color: #d3d7cf;
-    }
-
-    .xterm-color-8 {
-      color: #555753;
-    }
-
-    .xterm-bg-color-8 {
-      background-color: #555753;
-    }
-
-    .xterm-color-9 {
-      color: @syntax-color-variable; // Red
-    }
-
-    .xterm-bg-color-9 {
-      background-color: @syntax-color-variable; // Red
-    }
-
-    .xterm-color-10 {
-      color: @syntax-color-snippet; // Green
-    }
-
-    .xterm-bg-color-10 {
-      background-color: @syntax-color-snippet; // Green
-    }
-
-    .xterm-color-11 {
-      color: @syntax-color-constant; // Yellow (Orange)
-    }
-
-    .xterm-bg-color-11 {
-      background-color: @syntax-color-constant; // Yellow (Orange)
-    }
-
-    .xterm-color-12 {
-      color: @syntax-color-function; // Blue
-    }
-
-    .xterm-bg-color-12 {
-      background-color: @syntax-color-function; // Blue
-    }
-
-    .xterm-color-13 {
-      color: @syntax-color-keyword; // Purple
-    }
-
-    .xterm-bg-color-13 {
-      background-color: @syntax-color-keyword; // Purple
-    }
-
-    .xterm-color-14 {
-      color: @syntax-color-class; // Cyan
-    }
-
-    .xterm-bg-color-14 {
-      background-color: @syntax-color-class; // Cyan
-    }
-
-    .xterm-color-15 {
-      color: #eeeeec;
-    }
-
-    .xterm-bg-color-15 {
-      background-color: #eeeeec;
-    }
-
-    .xterm-color-16 {
-      color: #000000;
-    }
-
-    .xterm-bg-color-16 {
-      background-color: #000000;
-    }
   }
+
+  [data-color-key="background"] {
+    color: @syntax-background-color;
+  }
+
+  [data-color-key="cursor"] {
+
+  }
+
+  [data-color-key="cursorAccent"] {
+
+  }
+
+  [data-color-key="selection"] {
+
+  }
+
+  [data-color-key="black"] { // 0, Black
+    // .xterm-color-0 {
+      color: #2e3436;
+    // }
+  }
+
+  [data-color-key="red"] { // 1, Red
+    // .xterm-color-1 {
+      color: @syntax-color-variable; // Red
+    // }
+  }
+
+  [data-color-key="green"] { // 2, Green
+    // .xterm-color-2 {
+      color: @syntax-color-snippet; // Green
+    // }
+  }
+
+  [data-color-key="yellow"] { // 3, Yellow
+    // .xterm-color-3 {
+      color: @syntax-color-constant; // Yellow (Orange)
+    // }
+  }
+
+  [data-color-key="blue"] { // 4, Blue
+    // .xterm-color-4 {
+      color: @syntax-color-function; // Blue
+    // }
+  }
+
+  [data-color-key="magenta"] { // 5, Magenta
+    // .xterm-color-5 {
+      color: @syntax-color-keyword; // Purple
+    // }
+  }
+
+  [data-color-key="cyan"] { // 6, Cyan
+    // .xterm-color-6 {
+      color: @syntax-color-class; // Cyan
+    // }
+  }
+
+  [data-color-key="white"] { // 7, White
+    // .xterm-color-7 {
+      color: #d3d7cf;
+    // }
+  }
+
+  [data-color-key="brightBlack"] { // 8, Bright Black
+    // .xterm-color-8 {
+      color: #555753;
+    // }
+  }
+
+  [data-color-key="brightRed"] { // 9, Bright Red
+    // .xterm-color-9 {
+      color: @syntax-color-variable; // Red
+    // }
+  }
+
+  [data-color-key="brightGreen"] { // 10, Bright Green
+    // .xterm-color-10 {
+      color: @syntax-color-snippet; // Green
+    // }
+  }
+
+  [data-color-key="brightYellow"] { // 11, Bright Yellow
+    // .xterm-color-11 {
+      color: @syntax-color-constant; // Yellow (Orange)
+    // }
+  }
+
+  [data-color-key="brightBlue"] { // 12, Bright Blue
+    // .xterm-color-12 {
+      color: @syntax-color-function; // Blue
+    // }
+  }
+
+  [data-color-key="brightMagenta"] { // 13, Bright Magenta
+    // .xterm-color-13 {
+      color: @syntax-color-keyword; // Purple
+    // }
+  }
+
+  [data-color-key="brightCyan"] { // 14, Bright Cyan
+    // .xterm-color-14 {
+      color: @syntax-color-class; // Cyan
+    // }
+  }
+
+  [data-color-key="brightWhite"] { // 15, Bright White
+    // .xterm-color-15 {
+      color: #eeeeec;
+    // }
+  }
+
+  .xterm-color-16 { // ????
+    color: #000000;
+  }
+
 }

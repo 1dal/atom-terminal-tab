@@ -4,6 +4,7 @@
 * Reimplemented etch on `TerminalView`.
 * Extracted business logic from `TerminalView` into a new `TerminalSession` model.
 * Updated to Xterm 3.
+* Extracts theme matching logic into `ThemeMatcher`, which now creates a dummy DOM tree that we can then read styles off of.
 
 ## 0.4.0
 
